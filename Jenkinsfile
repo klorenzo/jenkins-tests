@@ -11,10 +11,14 @@ pipeline {
 
 	stages {
 		stage('Greetings') {
-			sh 'echo "Hi Kevin :)"'
+			steps {
+				sh 'echo "Hi Kevin :)"'
+			}
 		}
 		stage('Print NodeJS Version') {
-			sh 'node -v'
+			steps {
+				sh 'node -v'
+			}
 		}
 	}
 }
