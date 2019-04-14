@@ -15,6 +15,11 @@ pipeline {
 				sh 'echo "Hi Kevin :)"'
 			}
 		}
+		stage('Build Other Job') {
+			steps {
+				build job: 'kl-parameterized', parameters: [string(name: 'ROOT_ID', value: '$BUILD_ID')], propagate: false, wait: false
+			}
+		}
 		stage('List of Elements') {
 			steps {
 				sh 'ls -l'
