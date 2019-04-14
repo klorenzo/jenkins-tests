@@ -15,6 +15,11 @@ pipeline {
 				sh 'echo "Hi Kevin :)"'
 			}
 		}
+		stage('List of Elements') {
+			steps {
+				sh 'ls -l'
+			}
+		}
 		stage('Print NodeJS Version') {
 			steps {
 				sh 'node -v'
